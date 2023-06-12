@@ -1,2 +1,2 @@
-# -W_clone
+# W_clone
 React.js Study
