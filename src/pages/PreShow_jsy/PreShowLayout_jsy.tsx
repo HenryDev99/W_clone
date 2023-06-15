@@ -1,4 +1,3 @@
-import Button from "antd/es/button";
 import Pagination from "antd/es/pagination";
 import "/Users/fridajeong/W_clone/src/pages/PreShow_jsy/PreShow_jsy.scss";
 
@@ -35,80 +34,42 @@ const PreShowLayout_JSY:React.FC = ()=>{
                 </div>
             </div>
             <div preshow-tab>
-                <ul >
+                <ul className="button-tab">
                     <li>
-                        <Button shape="round">
+                        <button>
                             #
                             All
-                        </Button>
+                        </button>
                     </li>
                     <li>
-                        <Button shape="round">
+                        <button>
                             #
                             모던
-                        </Button>
+                        </button>
                     </li>
                     <li>
-                        <Button shape="round">
+                        <button>
                             #
                             페미닌
-                        </Button>
+                        </button>
                     </li>
                     <li>
-                        <Button shape="round">
+                        <button>
                             #
                             캐주얼
-                        </Button>
+                        </button>
                     </li>
                     <li>
-                        <Button shape="round">
+                        <button >
                             #
                             베이직
-                        </Button>
+                        </button>
                     </li>
                     <li>
-                        <Button shape="round">
+                        <button >
                             #
                             로맨틱
-                        </Button>
-                    </li>
-                </ul>
-                <ul >
-                    <li>
-                        <Button shape="round">
-                            #
-                            All
-                        </Button>
-                    </li>
-                    <li>
-                        <Button shape="round">
-                            #
-                            모던
-                        </Button>
-                    </li>
-                    <li>
-                        <Button shape="round">
-                            #
-                            페미닌
-                        </Button>
-                    </li>
-                    <li>
-                        <Button shape="round">
-                            #
-                            캐주얼
-                        </Button>
-                    </li>
-                    <li>
-                        <Button shape="round">
-                            #
-                            베이직
-                        </Button>
-                    </li>
-                    <li>
-                        <Button shape="round">
-                            #
-                            로맨틱
-                        </Button>
+                        </button>
                     </li>
                 </ul>
             </div>
