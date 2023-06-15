@@ -1,29 +1,7 @@
 import Pagination from "antd/es/pagination";
-import "/Users/fridajeong/W_clone/src/pages/PreShow_jsy/PreShow_jsy.scss";
+import "./PreShow_jsy.scss";
 
-const PreShowLayout_JSY:React.FC = ()=>{
-
-    function btn(){
-        function btnname(){
-        var btn = [];
-        for(var i = 0; i<10; i++){
-            btn.push(<div>안녕</div>)
-        }
-        return btn
-        }
-        return (
-            <div>
-                {"All"}
-                {"모던"}
-                {"페미닌"}
-                {"캐주얼"}
-                {"베이직"}
-                {"로맨틱"}
-            </div>
-        )
-    }
-        
-    
+const PreShowLayout_JSY:React.FC = ()=>{        
     return <div>
         <div className="main-layout-container preshow-container">
             <header className ="header-container"></header>
@@ -34,9 +12,9 @@ const PreShowLayout_JSY:React.FC = ()=>{
                 </div>
             </div>
             <div preshow-tab>
-                <ul className="button-tab">
+                <ul>
                     <li>
-                        <button>
+                        <button className="buttontab">
                             #
                             All
                         </button>
