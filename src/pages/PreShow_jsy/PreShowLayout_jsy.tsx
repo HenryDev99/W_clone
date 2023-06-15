@@ -1,7 +1,18 @@
 import Pagination from "antd/es/pagination";
 import "./PreShow_jsy.scss";
 import preshowdata from "../../assets/data/preshowData.json"
+
 const PreShowLayout_JSY:React.FC = ()=>{        
+
+    const buttonName = [
+            "All",
+            "모던",
+            "페미닌",
+            "캐주얼",
+            "베이직",
+            "로맨틱"
+    ];
+
     return <div>
         <div className="main-layout-container preshow-container">
             <header className ="header-container"></header>
@@ -13,42 +24,13 @@ const PreShowLayout_JSY:React.FC = ()=>{
             </div>
             <div preshow-tab>
                 <ul>
-                    <li>
-                        <button className="buttontab">
-                            #
-                            All
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            #
-                            모던
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            #
-                            페미닌
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            #
-                            캐주얼
-                        </button>
-                    </li>
-                    <li>
-                        <button >
-                            #
-                            베이직
-                        </button>
-                    </li>
-                    <li>
-                        <button >
-                            #
-                            로맨틱
-                        </button>
-                    </li>
+                    {
+                        buttonName.map((buttonName,idx) => {
+                            return <div>
+                                <li><button className="buttontab">#{buttonName}</button></li>
+                            </div>
+                        })
+                    }
                 </ul>
             </div>
             <div className="preshow-content">
