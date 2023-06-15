@@ -1,6 +1,6 @@
 import Pagination from "antd/es/pagination";
 import "./PreShow_jsy.scss";
-
+import preshowdata from "../../assets/data/preshowData.json"
 const PreShowLayout_JSY:React.FC = ()=>{        
     return <div>
         <div className="main-layout-container preshow-container">
@@ -55,16 +55,14 @@ const PreShowLayout_JSY:React.FC = ()=>{
                 <div className="event-list-wrap">
                     <div className="event-list">
                         <ul>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
-                            <li><a href="i#"></a></li>
+                            {
+                                preshowdata.map((item, idx) => {
+                                    return <div>
+                                        <img src={item.img}></img>
+                                        <li>{item.category}</li>
+                                    </div>
+                                })
+                            }
                         </ul>
                     </div>
                 </div>
