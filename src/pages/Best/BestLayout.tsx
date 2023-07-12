@@ -16,11 +16,13 @@ const BestLayout: React.FC = () => {
 
   let [isInputClicked, setIsInputClicked] = useState(false);
 
-  const menulist = ["ALL", "WOMEN", "MEN", "LIFE", "BEAUTY"];
+  const menuList = ["ALL", "WOMEN", "MEN", "LIFE", "BEAUTY"];
 
   return (
-    <div className="best-container">
-      <h2 className="sub-title">BEST</h2>
+    <div className="container-wrapper best-container">
+      <div className="thumbnail-container">
+        <h4 className="thumbnail-title">BEST</h4>
+      </div>
       <div className="event-search">
         <div className="search-container">
           <div className="search-area">
@@ -48,15 +50,17 @@ const BestLayout: React.FC = () => {
         </div>
       </div>
       <ul className="event-tab">
-        {
-          menulist.map((value)=>
-            <li data-hashtag={{value}} key={value}>
-              <button className={selectedDiv === value ? "selected" : ""} onClick={() => handleButtonClick(value)} type="button">
-                {value}
-              </button>
-            </li>
-          )
-        }
+        {menuList.map((value) => (
+          <li data-hashtag={{ value }} key={value}>
+            <button
+              className={selectedDiv === value ? "selected" : ""}
+              onClick={() => handleButtonClick(value)}
+              type="button"
+            >
+              {value}
+            </button>
+          </li>
+        ))}
       </ul>
 
       {selectedDiv === "ALL" && <BestItemComponent datalist={bestData} />}

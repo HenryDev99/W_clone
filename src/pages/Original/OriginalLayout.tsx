@@ -2,11 +2,7 @@ import React, {useState} from 'react'
 import OriginalData from 'assets/data/originalData.json'
 
 const OriginalLayout:React.FC = ()=> {
-    type tabs = {
-        category: string,
-        name: string
-    };
-    const tabs = [
+    const tabList = [
         {
             
             category: 'all',
@@ -36,7 +32,7 @@ const OriginalLayout:React.FC = ()=> {
     
     const [clickedIndex, setClickedIndex] = useState<number>(0);
 
-    const [selectedCategory, setSelectedCategory] = useState<string>('all');
+    const [selectedCategory, setSelectedCategory] = useState<string>('all'); //eslint-disable-line no-unused-vars
     const [filteredProducts, setFilteredProducts] = useState<Product[]>();
     
     type Product = {
@@ -52,6 +48,7 @@ const OriginalLayout:React.FC = ()=> {
     const handleTabClick = (category: string, index: number) => {
         setClickedIndex(index);
         setSelectedCategory(category);
+        console.log(selectedCategory);
         if(category === 'all') {
             setFilteredProducts(undefined);
         } else {
@@ -61,13 +58,13 @@ const OriginalLayout:React.FC = ()=> {
     };
     return (
     //TODO: 인피니티 스크롤 
-    <div className='main-layout-container original-container'>
-        <div className='original-container__inner'>
-            <h2>
+    <div className='container-wrapper original-container'>
+        <div className='thumbnail-container original-container__inner'>
+            <h4 className='thumbnail-title'>
                 ORIGINAL
-            </h2>
+            </h4>
             <div className='tab-area'>
-                {tabs.map((category, index) => (
+                {tabList.map((category:any, index:any) => (
                     <button key={category.category}
                             className={index === clickedIndex? 'active': ''}
                             onClick={() => handleTabClick(category.category, index)}

@@ -6,8 +6,8 @@ type dataType = {
   preview: string,
   item: string,
   state: string,
-  price: string,
-  before?: string,
+  originPrice: string,
+  bargainPrice?: string,
   sale?: string
 };
 
@@ -25,7 +25,7 @@ const ProductIntro:React.FC<GreetingsProps> = (data)=>{
             <li>
               <a className='display-block' href='./new'>
                   <div className='img-area'>
-                      <img src={process.env.PUBLIC_URL + list.preview} alt="app01" />
+                      <img src={list.preview} alt="app01" />
                   </div>
                   <div className="text-container">
                       <div className="text-area">
@@ -35,14 +35,21 @@ const ProductIntro:React.FC<GreetingsProps> = (data)=>{
                       </div>
                       <div className="price-area">
                           <div className="price">
-                              <span className='price__bargain'>{list.before}</span>
-                              <span className='price__origin'>{list.price}</span>
+
+                          {list.bargainPrice === ''?<span>{list.originPrice}</span>:
+                              <><span className='price__bargain'>{list.bargainPrice}</span><span className='price__origin'>{list.originPrice}</span></>
+                          }
                           </div>
                           <div className="percent">{list.sale}</div>
                       </div>
                       <div className="label-area">
-                          <div className='line'>뉴시즌</div>
-                          <div className='multi-line'>단독</div>
+                        <p>
+                            <span className='line clearance'>뉴시즌</span>
+                            <span className='line make_reservation'>예약</span>
+                        </p>
+                        <p>
+                            <span className='multi-line general_info'>단독</span>
+                        </p>
                       </div>
                   </div>
               </a>
