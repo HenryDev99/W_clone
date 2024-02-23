@@ -1,2 +1,1 @@
-# W_clone
-React.js Study
+퍼블리싱 스터디
